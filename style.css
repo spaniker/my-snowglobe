@@ -1,12 +1,12 @@
 body {
     margin: 0;
     color: #162d4f;
-    background: linear-gradient(#e6f4ff, #ffffff);
+    background: #dbc4a5;
     font-family: "Libre Caslon Text", Georgia, serif;
   }
 
   h1 {
-    color: #235fd4;
+    color: #624343;
     font-size: 2.5rem;
 
   }
@@ -23,49 +23,80 @@ body {
   }
    
   .tagline {
-    color: #df5034;
+    font-size: 1rem;
   }  
-   
+  
+
+  .scene {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    width: 100%;
+  }
+
+  .leaf{
+   width:5rem;
+    height:5rem;
+    animation-name: fall;          
+    animation-duration: 10s;          
+    animation-iteration-count: infinite;
+  }
+
+  #leftLeaf{
+    position: absolute;
+    left: 5rem;
+  }
+
+  #rightLeaf{
+    position: absolute;
+    right: 3rem;
+  }
+
   .globe-card {
+    width: 30rem;
+    height: 30rem;
     background: #fdf7e8;
-    border: 2px solid #235fd4;
+    border: 2px solid #932405;
+    padding-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
+    gap: 2rem;
+    justify-self: center; 
   }
+
+
    
   #message {
-    font-style: italic;
+    padding:2rem;
+    font-size: 1rem;
   }
 
   .globe {
-    width: 15rem;
-    height: 15rem;
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 25%, #ffffff, #cfe6ff 65%, #9dc4ef);
+    background:  #f4ad7a;
     display: flex;
     align-items: center;
     justify-content: center;
   }
    
-  .scene {
+  .cup {
     width: 78%;
   }
 
   button {
-    font: inherit;
-    color: #ffffff;
-    background: #df5034;
+    outline:none;
+    box-shadow: none;
     border: none;
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
-    transition: background 150ms ease, transform 150ms ease;
+    background: #fdf7e8;
   }
    
   button:hover {
-    background: #a43835;
     transform: scale(1.05);
+    box-shadow: none;
+
   }
 
   @keyframes shake {
@@ -74,6 +105,13 @@ body {
     40% { transform: translateX(0.6rem) rotate(4deg); }
     60% { transform: translateX(-0.4rem) rotate(-2deg); }
     80% { transform: translateX(0.4rem) rotate(2deg); }
+  }
+
+  @keyframes fall {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+   30%{transform: translateX(-3.5rem) translateY(3rem);  animation-timing-function: ease-in-out}
+   60%{transform: translateX(1rem) translateY(6rem);  animation-timing-function: ease-in-out}
+   
   }
    
   .globe.shaking {

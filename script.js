@@ -9,12 +9,15 @@ const messages = [
     "Life's short. Talk fast.",
     "I smell snow.",
     "I need coffee in an IV",
+    "No, it's National Baptism Day. Tie your tubes, idiot!",
+    "People are particularly stupid today, I can't talk to any more of them"
   ];
    
 
 button.addEventListener("click", () => {
     globe.classList.add("shaking");
     setTimeout(() => globe.classList.remove("shaking"), 600);
+
 
     const pick = Math.floor(Math.random() * messages.length);
     message.textContent = messages[pick];
